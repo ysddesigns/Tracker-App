@@ -1,16 +1,13 @@
-import React from "react";
-import { View, Text, Button } from "react-native";
+import { useRouter } from "expo-router";
+import { Button } from "react-native";
 
-const HomeScreen: React.FC = ({ navigation }: any) => {
+export default function HomeScreen() {
+  const router = useRouter();
+
   return (
-    <View>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Expenses"
-        onPress={() => navigation.navigate("Expenses")}
-      />
-    </View>
+    <Button
+      title="Go to Expenses"
+      onPress={() => router.push("/screen/expensesScreen")}
+    />
   );
-};
-
-export default HomeScreen;
+}
